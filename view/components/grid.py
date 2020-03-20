@@ -1,6 +1,7 @@
 from tkinter import Frame, Label, Checkbutton
 from model.cell import Cell
 
+
 class CellButton(Checkbutton, Cell):
     ON = True
     OFF = False
@@ -23,3 +24,8 @@ class CellButton(Checkbutton, Cell):
     def pack(self):
         self.pack()
 
+
+class GridFrame(Frame):
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(self, *args, **kwargs)

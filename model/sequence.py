@@ -2,10 +2,14 @@
 
 class Sequence:
 
-    def __init__(self, length=5):
+    def __init__(self, length=5, data=[]):
         self.__height = 5
-        self._cols = [[False, False, False, False, False] for x in range(length)]
-        self.__length = length
+        if not all(len(x)==5 for x in data):
+            self._cols = [[False, False, False, False, False] for _ in range(length)]
+            self.__length = length
+        else:
+            self._cols = data
+            self.__length = len(data)
 
     def __len__(self):
         return self.__length
@@ -35,10 +39,17 @@ class Sequence:
     def remove_column(self, index=-1) -> bool:
         try:
             self._cols.pop(index=index)
-            self.set_length(len(self-1))
+            self.set_length(len(self)-1)
             return True
         except IndexError:
             return False
+
+    def set_sequence(self, data) -> bool:
+        if all(len(x) == 5 for x in data):
+            self._cols = data
+            self.set_length(len(data))
+            return True
+        return False
 
     def set_xy(self, x, y, value) -> bool:
         """set the value `x` units right and `y` down from the top right corner"""
@@ -64,8 +75,20 @@ class Sequence:
         except Exception:
             return False
 
+    def __getitem__(self, item):
+        if type(item) == slice:
+            raise NotImplementedError
+        elif item == 0:
+            print(self._cols)
+            return self._cols[item]
+        else:
+            return self._cols[item % len(self._cols)]
+
+    def __setitem__(self, key, value):
+        self._cols[key % len(self._cols)] = value
+
 
 class Square(Sequence):
 
-    def __init__(self):
-        super().__init__()
+    def __init__(self, data=[]):
+        super().__init__(length=5, data=data)

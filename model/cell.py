@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 
+
 class Cell(ABC):
 
     def __init__(self, x, y):
