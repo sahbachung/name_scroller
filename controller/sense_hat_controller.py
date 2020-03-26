@@ -16,7 +16,7 @@ class Controller:
 
     def start(self):
         self.CURR_PROCESS = self.engine.start(
-            cmd=(lambda: self.hat.set_pixels(self.engine.get_next().to_array())),
+            cmd=(lambda: self.hat.set_pixels(self.engine.get_next().to_array(attr="get_val"))),
             daemon=False
         )
         self.CURR_PROCESS.begin()

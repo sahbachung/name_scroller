@@ -132,8 +132,14 @@ class Square(Sequence):
             assert all(len(c) == 8 for c in data)
         super().__init__(length=8, data=data)
 
-    def to_array(self, cmd=None) -> []:
-        return [cell for cell in self._cell_gen()]
+    def to_array(self, cmd=None, attr=None) -> []:
+        assert not (cmd and attr)
+        if cmd:
+            return [cmd(cell) for cell in self._cell_gen()]
+        elif attr:
+            return [getattr(cell, attr)() for cell in self._cell_gen()]
+        else:
+            return [cell for cell in self._cell_gen()]
 
     def _cell_gen(self):
         for col in self.get_rows():
