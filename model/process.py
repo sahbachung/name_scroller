@@ -44,15 +44,15 @@ class Process(Thread):
     args = []
     kwargs = {}
 
-    # update_rate is in milliseconds
-    update_rate = 1000
+    # refresh_rate is in milliseconds
+    refresh_rate = 1000
 
     # time process was created
     created = "0:0:0"
 
-    def __init__(self, command, args=[], kwargs={}, update_rate=-1, pid=None, daemon=True):
-        if update_rate>0:
-            self.set_update_rate(update_rate)
+    def __init__(self, command, args=[], kwargs={}, refresh_rate=-1, pid=None, daemon=True):
+        if refresh_rate > 0:
+            self.set_refresh_rate(refresh_rate)
         if not pid:
             self.pid = Process.next_pid()
         else:
@@ -81,12 +81,14 @@ class Process(Thread):
     def stop(self):
         self.set_state(2)
 
-    def pause(self, t=0):
+    def pause(self, t=0) -> bool:
         """pause for t milliseconds, or until resumed manually"""
         self.set_state(3)
         if t > 0:
             sleep(t / 1000)
             self.resume()
+            return True
+        return False
 
     def resume(self):
         s = self.get_state()
@@ -97,11 +99,13 @@ class Process(Thread):
 
     def begin(self):
         """starts the process in a separate thread"""
+        print(self.get_state())
         self.set_state(1)
         self.start()
 
-    def run(self, debug=False) -> None:
+    def run(self) -> None:
         """attempts to run the process specified"""
+        debug=0
         while 1:
             if self.get_state() == ProcessState(1):
                 if debug:
@@ -117,10 +121,10 @@ class Process(Thread):
                     self.process(*self.args, **self.kwargs)
                 except Exception as e:
                     if debug:
-                        print(e)
+                        print(self.process, self.args, self.kwargs)
                     else:
                         raise e
-                sleep(self.update_rate / 1000)
+                sleep(self.refresh_rate / 1000)
 
     def register(self, command, *args, **kwargs):
         """registers a command and parameters for this Process"""
@@ -128,9 +132,9 @@ class Process(Thread):
         self.args = args
         self.kwargs = kwargs
 
-    def set_update_rate(self, m):
+    def set_refresh_rate(self, m):
         """m is refresh rate in milliseconds"""
-        self.update_rate = m
+        self.refresh_rate = m
 
     @staticmethod
     def next_pid() -> int:

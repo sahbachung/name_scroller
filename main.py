@@ -27,9 +27,11 @@ def main():
     # print("Paused")
     # input()
 
-    e = SequenceEngine()
-    p = Process((lambda: print(e.get_next())), update_rate=1000)
-    p.run()
+    e = SequenceEngine(10)
+    e.load("./model/default.json")
+    # p = Process((lambda: print(e.get_next())))
+    p = e.start(lambda: print(e.get_next().to_array()), daemon=False)
+    p.begin()
 
 
 if __name__ == "__main__":
