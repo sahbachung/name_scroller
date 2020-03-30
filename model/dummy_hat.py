@@ -16,7 +16,7 @@ def rgb_to_hex(data):
 
 
 class SenseHat:
-
+    """Dummy Sense hat for displaying in the terminal"""
     def set_pixels(self, data):
         print(data)
 

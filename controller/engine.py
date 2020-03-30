@@ -75,12 +75,10 @@ class SequenceEngine(Engine):
         self._sequence = Sequence()
 
     def start(self, cmd=None, refresh_rate=1000, autostart=False, daemon=True) -> Process:
-        if cmd:
-            p = Process(cmd, refresh_rate=refresh_rate, daemon=daemon)
-            return p
-        else:
-            p = Process(self.get_next, refresh_rate=refresh_rate, daemon=daemon)
-            return p
+        if cmd is None:
+            cmd = self.get_next
+        p = Process(cmd, refresh_rate=refresh_rate, daemon=daemon)
+        return p
 
     def get_next(self) -> Square:
         self.increment()

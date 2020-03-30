@@ -51,6 +51,7 @@ class Process(Thread):
     created = "0:0:0"
 
     def __init__(self, command, args=[], kwargs={}, refresh_rate=-1, pid=None, daemon=True):
+        print("TEST")
         if refresh_rate > 0:
             self.set_refresh_rate(refresh_rate)
         if not pid:

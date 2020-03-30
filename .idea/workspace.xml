@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="038f0050-9a89-48f8-b50d-40e3c9243c0f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/engine.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/dummy_hat.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/dummy_hat.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/process.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/process.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +40,7 @@
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.dummy_hat">
+  <component name="RunManager" selected="Python.sense_hat_controller">
     <configuration name="dummy_hat" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Banner generator" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -149,8 +153,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.dummy_hat" />
         <item itemvalue="Python.sense_hat_controller" />
+        <item itemvalue="Python.dummy_hat" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.engine" />
         <item itemvalue="Python.sequence" />
@@ -176,6 +180,7 @@
       <workItem from="1584763705141" duration="2209000" />
       <workItem from="1584960304977" duration="6813000" />
       <workItem from="1585197123384" duration="20557000" />
+      <workItem from="1585569814049" duration="425000" />
     </task>
     <servers />
   </component>
@@ -195,22 +200,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="739" y="262" key="FileChooserDialogImpl/-1600.181.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1585218767697" />
-    <state width="1877" height="347" key="GridCell.Tab.0.bottom" timestamp="1585218773075">
+    <state width="1877" height="280" key="GridCell.Tab.0.bottom" timestamp="1585570229218">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.0.bottom/-1600.181.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1585218773075" />
-    <state width="1877" height="347" key="GridCell.Tab.0.center" timestamp="1585218773075">
+    <state width="1877" height="280" key="GridCell.Tab.0.bottom/-1600.181.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1585570229218" />
+    <state width="1877" height="280" key="GridCell.Tab.0.center" timestamp="1585570229217">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.0.center/-1600.181.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1585218773075" />
-    <state width="1877" height="347" key="GridCell.Tab.0.left" timestamp="1585218773075">
+    <state width="1877" height="280" key="GridCell.Tab.0.center/-1600.181.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1585570229217" />
+    <state width="1877" height="280" key="GridCell.Tab.0.left" timestamp="1585570229216">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.0.left/-1600.181.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1585218773075" />
-    <state width="1877" height="347" key="GridCell.Tab.0.right" timestamp="1585218773075">
+    <state width="1877" height="280" key="GridCell.Tab.0.left/-1600.181.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1585570229216" />
+    <state width="1877" height="280" key="GridCell.Tab.0.right" timestamp="1585570229218">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.0.right/-1600.181.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1585218773075" />
+    <state width="1877" height="280" key="GridCell.Tab.0.right/-1600.181.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1585570229218" />
     <state width="1877" height="347" key="GridCell.Tab.1.bottom" timestamp="1585218773075">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -227,10 +232,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="347" key="GridCell.Tab.1.right/-1600.181.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1585218773075" />
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1585197134057">
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1585569814477">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/-1600.181.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1585197134057" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/-1600.181.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1585569814477" />
     <state x="701" y="163" key="refactoring.ChangeSignatureDialog" timestamp="1584964152928">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -241,7 +246,7 @@
     <SUITE FILE_PATH="coverage/Banner_generator$main.coverage" NAME="main Coverage Results" MODIFIED="1584410322463" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/name_scroller$engine.coverage" NAME="engine Coverage Results" MODIFIED="1585200529080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/controller" />
     <SUITE FILE_PATH="coverage/name_scroller$main.coverage" NAME="main Coverage Results" MODIFIED="1585215542720" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/name_scroller$sense_hat_controller.coverage" NAME="sense_hat_controller Coverage Results" MODIFIED="1585215583893" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/controller" />
+    <SUITE FILE_PATH="coverage/name_scroller$sense_hat_controller.coverage" NAME="sense_hat_controller Coverage Results" MODIFIED="1585570229196" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/controller" />
     <SUITE FILE_PATH="coverage/name_scroller$dummy_hat.coverage" NAME="dummy_hat Coverage Results" MODIFIED="1585216572579" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/model" />
     <SUITE FILE_PATH="coverage/name_scroller$gui.coverage" NAME="gui Coverage Results" MODIFIED="1585197442268" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/view" />
   </component>
